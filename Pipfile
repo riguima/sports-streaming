@@ -8,6 +8,7 @@ flask = "*"
 gunicorn = "*"
 selenium = "*"
 webdriver-manager = "*"
+httpx = "*"
 
 [dev-packages]
 pytest = "*"
