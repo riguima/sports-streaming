@@ -1,6 +1,3 @@
-import base64
-import re
-
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -20,18 +17,15 @@ class Browser:
             service=Service(ChromeDriverManager().install()), options=options
         )
 
-    def get_m3u8_url(self, player_id):
+    def get_player_script(self, player_id):
         self.driver.get(f"https://starplus.eventos.wtf/player.php?id={player_id}")
         for script in self.find_elements("script"):
             if "playerInstance" in script.get_attribute("innerHTML"):
-                base64_url = re.findall(
-                    r"file.+?atob\(\"(.+?)\"\)",
-                    script.get_attribute("innerHTML"),
-                    re.DOTALL,
-                )[0]
-                url = base64.b64decode(base64_url).decode("utf-8")
-                url = url[: url.rfind("m3u8")] + "m3u8"
-                return url
+                result = script.get_attribute("innerHTML").replace(
+                    'width: "100%', 'width: "100vw'
+                )
+                result = result.replace('height: "100%', 'height: "100vh')
+                return result
 
     def find_elements(self, selector, element=None, wait=10):
         element = element or self.driver

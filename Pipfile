@@ -9,6 +9,7 @@ gunicorn = "*"
 selenium = "*"
 webdriver-manager = "*"
 httpx = "*"
+parsel = "*"
 
 [dev-packages]
 pytest = "*"
