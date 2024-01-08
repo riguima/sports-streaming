@@ -10,6 +10,7 @@ selenium = "*"
 webdriver-manager = "*"
 httpx = "*"
 parsel = "*"
+toml = "*"
 
 [dev-packages]
 pytest = "*"

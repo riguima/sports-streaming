@@ -4,6 +4,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta http-equiv="Content-Language" content="pt-br">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/reidoscanais/rdc@main/assets/css/player-v3.1.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/reidoscanais/rdc@main/assets/css/hotstar.css">
     <style media="screen">.jwplayer.jw-flag-time-slider-above .jw-vpaid-non-linear{bottom:66px}.jwplayer.jw-breakpoint-7 .jw-vpaid-non-linear{bottom:132px}.jwplayer.jw-flag-user-inactive:not(.jw-state-paused) .jw-vpaid-non-linear{bottom:.5em}.jwplayer .jw-vpaid-non-linear{bottom:60px}.jwplayer .jw-vpaid-iframe{border:0;width:100%;height:100%;position:absolute;overflow:hidden}.jwplayer .jw-plugin-vast.jw-plugin{top:0;width:100%;pointer-events:none}.jwplayer .jw-plugin-vast.jw-plugin *{pointer-events:all}.jwplayer .jw-plugin-vast .jw-ad-icon-container{position:absolute;display:none;pointer-events:all;cursor:pointer}.jwplayer .jw-plugin-vast .jw-ad-icon-container.jw-ad-icon-active{display:block}.jwplayer .jw-plugin-vast .jw-ad-icon-container iframe{pointer-events:none;border:none;height:100%;width:100%;margin:0}.jw-plugin-vast.jw-vast-nonlinear-active .jw-banner{opacity:1}.jw-plugin-vast.jw-vast-nonlinear-active .jw-vast-nonlinear-close-button{margin:0 auto;opacity:.75}.jw-plugin-vast.jw-vast-nonlinear-active:hover .jw-vast-nonlinear-close-button{opacity:1}.jw-plugin-vast.jw-vast-nonlinear-collapsed .jw-vast-nonlinear-open-button{margin:0 auto;opacity:.5}.jw-plugin-vast.jw-vast-nonlinear-collapsed .jw-banner,.jw-plugin-vast.jw-vast-nonlinear-collapsed .jw-vast-nonlinear-close-button{opacity:0}.jw-plugin-vast.jw-vast-nonlinear-collapsed:hover .jw-vast-nonlinear-open-button{opacity:1}.jw-plugin-vast.jw-vast-nonlinear-collapsed:hover .jw-vast-nonlinear-close-button{opacity:0}.jw-plugin-vast .jw-vast-nonlinear-close-button,.jw-plugin-vast .jw-vast-nonlinear-open-button{position:absolute;right:0;bottom:0;left:0;display:block;margin:auto;width:18px;height:18px;cursor:pointer;opacity:0;transition:opacity .2s ease}.jw-plugin-vast .jw-vast-nonlinear-close-button{transform:rotate(45deg)}
@@ -18,9 +19,13 @@
     <script>jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';</script>
 </head>
 <body>
-    <div id="player">Carregando...</div>
-    <script>
-        {{ player_script|safe }}
-    </script>
+    {% if player_script %}
+        <div id="player">Carregando...</div>
+        <script>
+            {{ player_script|safe }}
+        </script>
+    {% else %}
+        <div class="alert"><h1>Este evento começa em breve. Aguarde o início!</h1></div>
+    {% endif %}
 </body>
 </html>

@@ -1,0 +1,39 @@
+body {
+    padding: 20px 0;
+}
+
+#games {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.w3-quarter {
+    box-shadow: 1px 1px 5px 1px gray;
+}
+
+.w3-card-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.w3-card-4 p:first-child {
+    margin-top: 10px;
+}
+
+.w3-card-4 b {
+    font-size: 20px;
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+}
