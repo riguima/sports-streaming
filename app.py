@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from m3u8_links_api.browser import Browser
+from sports_streaming.browser import Browser
 
 browser = Browser()
 

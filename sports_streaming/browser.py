@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-from m3u8_links_api.config import get_config
+from sports_streaming.config import config
 
 
 class Browser:
@@ -30,7 +30,7 @@ class Browser:
             href = self.find_element("a", element=card).get_attribute("href")
             player_id = re.findall(r"id=(.+)", href)[0]
             tag = tag.replace(
-                href, get_config()["DOMAIN"] + url_for("video", player_id=player_id)
+                href, config["DOMAIN"] + url_for("video", player_id=player_id)
             )
             result.append(tag)
         return result
