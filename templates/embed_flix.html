@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <title>Jogos</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//reidoscanais.com/starplus/js/horario.js?v"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//reidoscanais.com/starplus/css/starp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style type="text/css">
+        @media screen and (min-width:0px) and (max-width:767px){
+            .iframe-container iframe{height:266px}
+        }
+
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+        .w3-bar-block .w3-bar-item {padding:20px}
+        .clean-gray{border:solid 1px #dedede;background:#efefef;color:#222;padding:4px;text-align:center}
+        .display-5{font-size:2.5rem;font-weight:300;line-height:1.1}
+        hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}
+        small,.small{font-size:80%;font-weight:400}
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .alert.success {background-color: #04AA6D;}
+        .alert.info {background-color: #2196F3;}
+        .alert.warning {background-color: #F99206;}
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .copy-box {
+            border: 1px solid #dedede;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .copy-box:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <section id="games">
+        {% for game in games %}
+            {{ game|safe }}
+        {% endfor %}
+    </section>
+</body>
+</html>

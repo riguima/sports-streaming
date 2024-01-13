@@ -60,6 +60,10 @@
     </style>
 </head>
 <body>
+    <div id="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Star%2B_logo.svg" alt="Star+" width="250" height="100">
+      <p>Escolha um evento:</p>
+    </div>
     <section id="games">
         {% for game in games %}
             {{ game|safe }}

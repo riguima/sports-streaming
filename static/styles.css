@@ -2,6 +2,18 @@ body {
     padding: 20px 0;
 }
 
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+#header p {
+  font-size: 40px;
+}
+
 #games {
     padding: 10px;
     display: flex;
