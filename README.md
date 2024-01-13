@@ -1,6 +1,6 @@
 # Sports Streaming
 
-![](https://github.com/riguima/sports-streaming/blob/master/assets/presentation.mp4)
+![](https://www.youtube.com/watch?v=JjfII8XlpCo)
 
 Site para streaming de jogos diversos: Futebol, Tênis, Basquete, etc.
 
