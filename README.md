@@ -17,6 +17,8 @@ Onde `DOMAIN` é o dominio onde a aplicação vai rodar, no exemplo vai rodar em
 Siga o script para rodar:
 
 ```
+git clone https://github.com/riguima/sports-streaming
+cd sports-streaming
 pip install -r requirements.txt
 gunicorn -b 0.0.0.0:5000 app:app
 ```
